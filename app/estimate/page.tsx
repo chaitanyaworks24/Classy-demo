@@ -1,0 +1,2 @@
+import EstimateClient from '@/components/EstimateClient';
+export default function Estimate(){return <main className="page"><section className="page-intro"><div><div className="eyebrow">PLAN WITH CONFIDENCE</div><h1>Get Your Interior Estimate</h1></div><p>A useful starting point for understanding the investment range for your home. It is indicative, not a final quotation.</p></section><section className="estimate"><EstimateClient/></section></main>}
