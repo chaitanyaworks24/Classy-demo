@@ -29,7 +29,7 @@ export default function StudioLogin() {
         <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '20px', textAlign: 'left' }}>
           <div>
             <label style={{ display: 'block', fontSize: '12px', fontWeight: 500, marginBottom: '8px' }}>Email</label>
-            <input 
+            <input
               name="email"
               type="email"
               defaultValue="demo@classycraft.com"
@@ -39,7 +39,7 @@ export default function StudioLogin() {
           </div>
           <div>
             <label style={{ display: 'block', fontSize: '12px', fontWeight: 500, marginBottom: '8px' }}>Password</label>
-            <input 
+            <input
               name="password"
               type="password"
               placeholder="Enter password"
@@ -47,15 +47,15 @@ export default function StudioLogin() {
               autoFocus
             />
           </div>
-          
+
           {error && <div style={{ fontSize: '12px', color: '#d32f2f' }}>{error}</div>}
 
           <button type="submit" className="dark-btn" style={{ width: '100%', marginTop: '10px' }}>
             Sign In
           </button>
         </form>
-        
-        <p style={{ fontSize: '11px', color: '#999', marginTop: '20px' }}>Demo Access: Use "demo123"</p>
+
+        <p style={{ fontSize: '11px', color: '#999', marginTop: '20px' }}>Demo Access: Use "demo@123"</p>
       </div>
     </div>
   );
