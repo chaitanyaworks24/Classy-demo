@@ -4,10 +4,7 @@ import { useMemo, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { projects } from '@/data/projects';
 
-const ROOM_CATEGORIES = [
-  'All', 'Kitchen', 'Bedrooms', 'Living Room', 'Crockery Unit', 
-  'Kids Room', 'Pooja Room', 'Foyer', 'TV Unit', 'Wardrobes'
-];
+
 
 const BUDGET_RANGES = [
   { label: 'All Budgets', value: 'All' },
@@ -18,22 +15,19 @@ const BUDGET_RANGES = [
 ];
 
 export default function PortfolioClient() {
-  const [room, setRoom] = useState('All');
   const [homeType, setHomeType] = useState('All');
-  const [budget, setBudget] = useState('All');
+  const [budget, setBudget] = useState('All Budgets');
   const [style, setStyle] = useState('All');
 
   // Filter list
   const list = useMemo(() => {
     return projects.filter(p => {
-      if (room !== 'All' && !p.roomTypes.includes(room)) return false;
       if (homeType !== 'All' && p.homeType !== homeType) return false;
       if (style !== 'All' && p.style !== style) return false;
       
       if (budget !== 'All') {
         const range = BUDGET_RANGES.find(r => r.label === budget);
         if (range) {
-          // Check if project overlaps with budget range
           if (p.budgetMin > range.max! || p.budgetMax < range.min!) {
             return false;
           }
@@ -41,43 +35,80 @@ export default function PortfolioClient() {
       }
       return true;
     });
-  }, [room, homeType, budget, style]);
+  }, [homeType, budget, style]);
 
-  // Derived options based on current room selection
-  const homeTypes = ['All', ...new Set(projects.filter(p => room === 'All' || p.roomTypes.includes(room)).map(p => p.homeType))];
-  const styles = ['All', ...new Set(projects.filter(p => room === 'All' || p.roomTypes.includes(room)).map(p => p.style))];
+  const homeTypes = ['All', ...new Set(projects.map(p => p.homeType))];
+  const styles = ['All', ...new Set(projects.map(p => p.style))];
+  const budgets = BUDGET_RANGES.map(b => b.label);
 
   return (
     <div>
-      <div className="portfolio-toolbar">
-        <div className="tabs" style={{ flexWrap: 'wrap', marginBottom: '20px' }}>
-          {ROOM_CATEGORIES.map(x => (
-            <button 
-              className={room === x ? 'active' : ''} 
-              onClick={() => { setRoom(x); setHomeType('All'); setBudget('All'); setStyle('All'); }} 
-              key={x}
-            >
-              {x}
-            </button>
-          ))}
-        </div>
-        
-        <div className="filters" style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-          <label>HOME TYPE 
-            <select value={homeType} onChange={e => setHomeType(e.target.value)}>
-              {homeTypes.map(t => <option key={t}>{t}</option>)}
-            </select>
-          </label>
-          <label>BUDGET 
-            <select value={budget} onChange={e => setBudget(e.target.value)}>
-              {BUDGET_RANGES.map(b => <option key={b.label} value={b.label}>{b.label}</option>)}
-            </select>
-          </label>
-          <label>STYLE 
-            <select value={style} onChange={e => setStyle(e.target.value)}>
-              {styles.map(t => <option key={t}>{t}</option>)}
-            </select>
-          </label>
+      <div className="portfolio-toolbar" style={{ marginBottom: '40px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '100%', overflow: 'hidden' }}>
+          
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.1em', color: '#888', marginRight: '16px', width: '60px', flexShrink: 0 }}>Type</span>
+            <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px', scrollbarWidth: 'none' }} className="hide-scrollbar">
+              {homeTypes.map(t => (
+                <button
+                  key={t}
+                  onClick={() => setHomeType(t)}
+                  style={{
+                    padding: '8px 16px', fontSize: '12px', borderRadius: '30px', flexShrink: 0,
+                    border: '1px solid', cursor: 'pointer', whiteSpace: 'nowrap',
+                    background: homeType === t ? 'var(--charcoal)' : 'transparent',
+                    color: homeType === t ? '#fff' : '#666',
+                    borderColor: homeType === t ? 'var(--charcoal)' : 'var(--line)'
+                  }}
+                >
+                  {t}
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.1em', color: '#888', marginRight: '16px', width: '60px', flexShrink: 0 }}>Budget</span>
+            <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px', scrollbarWidth: 'none' }} className="hide-scrollbar">
+              {budgets.map(b => (
+                <button
+                  key={b}
+                  onClick={() => setBudget(b)}
+                  style={{
+                    padding: '8px 16px', fontSize: '12px', borderRadius: '30px', flexShrink: 0,
+                    border: '1px solid', cursor: 'pointer', whiteSpace: 'nowrap',
+                    background: budget === b ? 'var(--charcoal)' : 'transparent',
+                    color: budget === b ? '#fff' : '#666',
+                    borderColor: budget === b ? 'var(--charcoal)' : 'var(--line)'
+                  }}
+                >
+                  {b}
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.1em', color: '#888', marginRight: '16px', width: '60px', flexShrink: 0 }}>Style</span>
+            <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px', scrollbarWidth: 'none' }} className="hide-scrollbar">
+              {styles.map(s => (
+                <button
+                  key={s}
+                  onClick={() => setStyle(s)}
+                  style={{
+                    padding: '8px 16px', fontSize: '12px', borderRadius: '30px', flexShrink: 0,
+                    border: '1px solid', cursor: 'pointer', whiteSpace: 'nowrap',
+                    background: style === s ? 'var(--charcoal)' : 'transparent',
+                    color: style === s ? '#fff' : '#666',
+                    borderColor: style === s ? 'var(--charcoal)' : 'var(--line)'
+                  }}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
 

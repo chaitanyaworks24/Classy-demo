@@ -18,34 +18,7 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  {
-    slug: 'kitchen-01', title: 'Kitchen Study I', category: 'Residential', homeType: 'Villa', roomTypes: ['Kitchen'], style: 'Contemporary', location: 'Bengaluru', image: '/assets/rooms/Kitchen/imgi_15_ki-17-1775038483-Vtwjl.webp', gallery: ['/assets/rooms/Kitchen/imgi_15_ki-17-1775038483-Vtwjl.webp', '/assets/rooms/Kitchen/imgi_366_3f9141110d11e4e2_9270-w714-h714-b2-p0--.webp', '/assets/rooms/Kitchen/imgi_348_46c125ad0f9132d7_0769-w720-h720-b2-p0--.webp'], description: 'A study in proportion, storage and warm material contrast, built around the everyday rituals of the kitchen.',
-    budgetMin: 1500000, budgetMax: 2000000, budgetLabel: '₹15–20L', areaSqFt: 1800, timelineWeeks: 12
-  },
-  {
-    slug: 'living-room-01', title: 'Living Room Study I', category: 'Residential', homeType: '3 BHK', roomTypes: ['Living Room'], style: 'Warm Minimal', location: 'Bengaluru', image: '/assets/rooms/living room/imgi_462_65b1438b04bf8c0c_3901-w800-h800-b2-p0--.webp', gallery: ['/assets/rooms/living room/imgi_462_65b1438b04bf8c0c_3901-w800-h800-b2-p0--.webp', '/assets/rooms/living room/imgi_498_93f12b830f7852df_7567-w800-h800-b2-p0--.webp', '/assets/rooms/living room/imgi_515_9ca1e8600b2bb77f_0728-w800-h800-b2-p0--.webp'], description: 'Calm living spaces where storage, seating and natural light are composed into a quieter daily experience.',
-    budgetMin: 1800000, budgetMax: 2500000, budgetLabel: '₹18–25L', areaSqFt: 1450, timelineWeeks: 16
-  },
-  {
-    slug: 'bedroom-01', title: 'Bedroom Study I', category: 'Residential', homeType: '2 BHK', roomTypes: ['Bedrooms'], style: 'Soft Contemporary', location: 'Bengaluru', image: '/assets/rooms/bedroom/imgi_11_06-1785331585-TpqGR.jpg', gallery: ['/assets/rooms/bedroom/imgi_11_06-1785331585-TpqGR.jpg', '/assets/rooms/bedroom/imgi_12_04-1785331583-MhLmg.jpg', '/assets/rooms/bedroom/imgi_13_mbr-15-1778741805-BsSIB.jpg'], description: 'Bedrooms designed as restorative spaces, balancing storage, lighting and material warmth.',
-    budgetMin: 1200000, budgetMax: 1500000, budgetLabel: '₹12–15L', areaSqFt: 1100, timelineWeeks: 10
-  },
-  {
-    slug: 'crockery-01', title: 'Crockery Unit Study', category: 'Residential', homeType: '3 BHK', roomTypes: ['Crockery Unit'], style: 'Refined Modern', location: 'Bengaluru', image: '/assets/rooms/cockery unit/imgi_34_cu-14-1776843577-qh26U.jpg', gallery: ['/assets/rooms/cockery unit/imgi_34_cu-14-1776843577-qh26U.jpg', '/assets/rooms/cockery unit/imgi_26_cu-18-1776843570-RE4Rl.jpg', '/assets/rooms/cockery unit/imgi_22_cr-9-1777447050-0GKZW.png'], description: 'Display, storage and lighting brought together as a deliberate architectural element.',
-    budgetMin: 1500000, budgetMax: 2000000, budgetLabel: '₹15–20L', areaSqFt: 1600, timelineWeeks: 12
-  },
-  {
-    slug: 'office-01', title: 'Workplace Study I', category: 'Commercial', homeType: 'Commercial', roomTypes: [], style: 'Contemporary', location: 'Bengaluru', image: '/assets/services/Commercial/office/imgi_59_9e2759252223525.Y3JvcCwxOTk5LDE1NjQsMCwzNTY.jpg', gallery: ['/assets/services/Commercial/office/imgi_59_9e2759252223525.Y3JvcCwxOTk5LDE1NjQsMCwzNTY.jpg', '/assets/services/Commercial/office/imgi_8_confidential-credit-service-company-kuala-lumpur-1-1000x600.jpg', '/assets/services/Commercial/office/imgi_10_bfi-bank-offices-lisbon-1000x600.jpg'], description: 'Commercial interiors that balance brand expression, focus and the practical needs of teams.',
-    budgetMin: 2500000, budgetMax: 4000000, budgetLabel: '₹25–40L', areaSqFt: 3500, timelineWeeks: 20
-  },
-  {
-    slug: 'restaurant-01', title: 'Hospitality Study I', category: 'Commercial', homeType: 'Commercial', roomTypes: [], style: 'Warm Contemporary', location: 'Bengaluru', image: '/assets/services/Commercial/restaurants/imgi_38_Restaurant-Interior-Design-17-jpg.webp', gallery: ['/assets/services/Commercial/restaurants/imgi_38_Restaurant-Interior-Design-17-jpg.webp', '/assets/services/Commercial/restaurants/imgi_40_Restaurant-Interior-Design-19-jpg.webp', '/assets/services/Commercial/restaurants/imgi_24_Restaurant-Interior-Design-2-jpg.webp'], description: 'Atmosphere-led hospitality spaces designed around movement, seating and memorable moments.',
-    budgetMin: 3500000, budgetMax: 6000000, budgetLabel: '₹35–60L', areaSqFt: 2500, timelineWeeks: 18
-  },
-  {
-    slug: 'shop-01', title: 'Retail Study I', category: 'Commercial', homeType: 'Commercial', roomTypes: [], style: 'Modern', location: 'Bengaluru', image: '/assets/services/Commercial/shop/imgi_28_RT400356-Edit.jpg', gallery: ['/assets/services/Commercial/shop/imgi_28_RT400356-Edit.jpg', '/assets/services/Commercial/shop/imgi_10_DSC01418.jpg', '/assets/services/Commercial/shop/imgi_29_RT400472-HDR-Edit.jpg'], description: 'Retail environments that make circulation, merchandising and identity work together.',
-    budgetMin: 2000000, budgetMax: 3500000, budgetLabel: '₹20–35L', areaSqFt: 1500, timelineWeeks: 12
-  },
+
   {
     slug: '1bhk1', title: 'The Mehta Residence', category: 'Residential', homeType: '1 BHK', roomTypes: ['Bedrooms', 'Kitchen'], style: 'Modern', location: 'Bengaluru', image: '/assets/services/Home interior/1bhks/1bhk1/imgi_22_1-bhk-home-design-bedroom-with-sliding-wardrobe-with-frosted-glass.jpg', gallery: ['/assets/services/Home interior/1bhks/1bhk1/imgi_22_1-bhk-home-design-bedroom-with-sliding-wardrobe-with-frosted-glass.jpg', '/assets/services/Home interior/1bhks/1bhk1/imgi_27_open-1-bhk-kitchen-design-with-breakfast-counter-and-two-chairs.jpg', '/assets/services/Home interior/1bhks/1bhk1/imgi_28_small-1-bhk-kitchen-design-with-overhead-cabinets-and-base-cabinets.jpg'], beforeImages: ['/assets/services/Home interior/(419) Pinterest/imgi_39_08a9d8e15e20be303d561bbb7fb6d36c.jpg', '/assets/services/Home interior/(419) Pinterest/imgi_44_3779b234e9f82690a5c368decad78844.jpg'], description: 'A calm, modern interior where soft neutrals, thoughtful lighting, and streamlined furniture create a relaxed and sophisticated atmosphere.',
     budgetMin: 800000, budgetMax: 1200000, budgetLabel: '₹8–12L', areaSqFt: 650, timelineWeeks: 8

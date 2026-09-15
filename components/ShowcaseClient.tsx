@@ -268,7 +268,7 @@ export default function ShowcaseClient({ clientName, items, settings }: Showcase
         <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '40px', maxWidth: '100%', overflow: 'hidden' }}>
-            {homeTypes.length > 2 && (
+            {homeTypes.length > 1 && (
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.1em', color: '#888', marginRight: '16px', width: '60px', flexShrink: 0 }}>Type</span>
                 <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px', scrollbarWidth: 'none' }} className="hide-scrollbar">
@@ -291,7 +291,7 @@ export default function ShowcaseClient({ clientName, items, settings }: Showcase
               </div>
             )}
             
-            {budgets.length > 2 && (
+            {budgets.length > 1 && (
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.1em', color: '#888', marginRight: '16px', width: '60px', flexShrink: 0 }}>Budget</span>
                 <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px', scrollbarWidth: 'none' }} className="hide-scrollbar">
@@ -314,7 +314,7 @@ export default function ShowcaseClient({ clientName, items, settings }: Showcase
               </div>
             )}
             
-            {styles.length > 2 && (
+            {styles.length > 1 && (
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.1em', color: '#888', marginRight: '16px', width: '60px', flexShrink: 0 }}>Style</span>
                 <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px', scrollbarWidth: 'none' }} className="hide-scrollbar">
